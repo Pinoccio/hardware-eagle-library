@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -5084,14 +5084,14 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <pin name="PB1/SCK" x="27.94" y="38.1" length="short" rot="R180"/>
 <pin name="PB2/PDI" x="27.94" y="35.56" length="short" rot="R180"/>
 <pin name="PB3/PDO" x="27.94" y="33.02" length="short" rot="R180"/>
-<pin name="PB4" x="27.94" y="30.48" length="short" rot="R180"/>
-<pin name="PB5" x="27.94" y="27.94" length="short" rot="R180"/>
-<pin name="PB6" x="27.94" y="25.4" length="short" rot="R180"/>
-<pin name="PB7" x="27.94" y="22.86" length="short" rot="R180"/>
-<pin name="PD0" x="27.94" y="17.78" length="short" rot="R180"/>
-<pin name="PD1" x="27.94" y="15.24" length="short" rot="R180"/>
-<pin name="PD2" x="27.94" y="12.7" length="short" rot="R180"/>
-<pin name="PD3" x="27.94" y="10.16" length="short" rot="R180"/>
+<pin name="~PB4" x="27.94" y="30.48" length="short" rot="R180"/>
+<pin name="~PB5" x="27.94" y="27.94" length="short" rot="R180"/>
+<pin name="~PB6" x="27.94" y="25.4" length="short" rot="R180"/>
+<pin name="~PB7" x="27.94" y="22.86" length="short" rot="R180"/>
+<pin name="*PD0" x="27.94" y="17.78" length="short" rot="R180"/>
+<pin name="*PD1" x="27.94" y="15.24" length="short" rot="R180"/>
+<pin name="*PD2" x="27.94" y="12.7" length="short" rot="R180"/>
+<pin name="*PD3" x="27.94" y="10.16" length="short" rot="R180"/>
 <pin name="PD4" x="27.94" y="7.62" length="short" rot="R180"/>
 <pin name="PD5" x="27.94" y="5.08" length="short" rot="R180"/>
 <pin name="PD6" x="27.94" y="2.54" length="short" rot="R180"/>
@@ -5099,11 +5099,11 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <pin name="PE0" x="27.94" y="-5.08" length="short" rot="R180"/>
 <pin name="PE1" x="27.94" y="-7.62" length="short" rot="R180"/>
 <pin name="PE2" x="27.94" y="-10.16" length="short" rot="R180"/>
-<pin name="PE3" x="27.94" y="-12.7" length="short" rot="R180"/>
-<pin name="PE4" x="27.94" y="-15.24" length="short" rot="R180"/>
-<pin name="PE5" x="27.94" y="-17.78" length="short" rot="R180"/>
-<pin name="PE6" x="27.94" y="-20.32" length="short" rot="R180"/>
-<pin name="PE7" x="27.94" y="-22.86" length="short" rot="R180"/>
+<pin name="~PE3" x="27.94" y="-12.7" length="short" rot="R180"/>
+<pin name="~*PE4" x="27.94" y="-15.24" length="short" rot="R180"/>
+<pin name="~*PE5" x="27.94" y="-17.78" length="short" rot="R180"/>
+<pin name="*PE6" x="27.94" y="-20.32" length="short" rot="R180"/>
+<pin name="*PE7" x="27.94" y="-22.86" length="short" rot="R180"/>
 <pin name="PF7" x="27.94" y="-45.72" length="short" rot="R180"/>
 <pin name="PF6" x="27.94" y="-43.18" length="short" rot="R180"/>
 <pin name="PF5" x="27.94" y="-40.64" length="short" rot="R180"/>
@@ -5117,7 +5117,7 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <pin name="PG2" x="-27.94" y="-15.24" length="short"/>
 <pin name="PG3" x="-27.94" y="-17.78" length="short"/>
 <pin name="PG4" x="-27.94" y="-20.32" length="short"/>
-<pin name="PG5" x="-27.94" y="-22.86" length="short"/>
+<pin name="PG5~" x="-27.94" y="-22.86" length="short"/>
 <pin name="AVSS_RFN" x="-27.94" y="-33.02" length="short"/>
 <pin name="AVSS_RFP" x="-27.94" y="-30.48" length="short"/>
 <pin name="RFP" x="-27.94" y="7.62" length="short"/>
@@ -5828,6 +5828,12 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <devices>
 <device name="" package="QFN-64">
 <connects>
+<connect gate="G$1" pin="*PD0" pad="25"/>
+<connect gate="G$1" pin="*PD1" pad="26"/>
+<connect gate="G$1" pin="*PD2" pad="27"/>
+<connect gate="G$1" pin="*PD3" pad="28"/>
+<connect gate="G$1" pin="*PE6" pad="52"/>
+<connect gate="G$1" pin="*PE7" pad="53"/>
 <connect gate="G$1" pin="AREF" pad="62"/>
 <connect gate="G$1" pin="AVDD" pad="60"/>
 <connect gate="G$1" pin="AVSS@58" pad="58"/>
@@ -5852,14 +5858,6 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <connect gate="G$1" pin="PB1/SCK" pad="37"/>
 <connect gate="G$1" pin="PB2/PDI" pad="38"/>
 <connect gate="G$1" pin="PB3/PDO" pad="39"/>
-<connect gate="G$1" pin="PB4" pad="40"/>
-<connect gate="G$1" pin="PB5" pad="41"/>
-<connect gate="G$1" pin="PB6" pad="42"/>
-<connect gate="G$1" pin="PB7" pad="43"/>
-<connect gate="G$1" pin="PD0" pad="25"/>
-<connect gate="G$1" pin="PD1" pad="26"/>
-<connect gate="G$1" pin="PD2" pad="27"/>
-<connect gate="G$1" pin="PD3" pad="28"/>
 <connect gate="G$1" pin="PD4" pad="29"/>
 <connect gate="G$1" pin="PD5" pad="30"/>
 <connect gate="G$1" pin="PD6" pad="31"/>
@@ -5867,11 +5865,6 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <connect gate="G$1" pin="PE0" pad="46"/>
 <connect gate="G$1" pin="PE1" pad="47"/>
 <connect gate="G$1" pin="PE2" pad="48"/>
-<connect gate="G$1" pin="PE3" pad="49"/>
-<connect gate="G$1" pin="PE4" pad="50"/>
-<connect gate="G$1" pin="PE5" pad="51"/>
-<connect gate="G$1" pin="PE6" pad="52"/>
-<connect gate="G$1" pin="PE7" pad="53"/>
 <connect gate="G$1" pin="PF0" pad="63"/>
 <connect gate="G$1" pin="PF1" pad="64"/>
 <connect gate="G$1" pin="PF2" pad="1"/>
@@ -5885,7 +5878,7 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <connect gate="G$1" pin="PG2" pad="16"/>
 <connect gate="G$1" pin="PG3" pad="17"/>
 <connect gate="G$1" pin="PG4" pad="18"/>
-<connect gate="G$1" pin="PG5" pad="19"/>
+<connect gate="G$1" pin="PG5~" pad="19"/>
 <connect gate="G$1" pin="RFN" pad="9"/>
 <connect gate="G$1" pin="RFP" pad="8"/>
 <connect gate="G$1" pin="RSTN" pad="12"/>
@@ -5893,6 +5886,13 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <connect gate="G$1" pin="TST" pad="11"/>
 <connect gate="G$1" pin="XTAL1" pad="57"/>
 <connect gate="G$1" pin="XTAL2" pad="56"/>
+<connect gate="G$1" pin="~*PE4" pad="50"/>
+<connect gate="G$1" pin="~*PE5" pad="51"/>
+<connect gate="G$1" pin="~PB4" pad="40"/>
+<connect gate="G$1" pin="~PB5" pad="41"/>
+<connect gate="G$1" pin="~PB6" pad="42"/>
+<connect gate="G$1" pin="~PB7" pad="43"/>
+<connect gate="G$1" pin="~PE3" pad="49"/>
 </connects>
 <technologies>
 <technology name=""/>
